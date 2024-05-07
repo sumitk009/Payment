@@ -156,27 +156,33 @@
         });
 
         function fetchReceipt(payment_id) {
-            fetch('https://sumitk009.github.io/Payment//fetch_receipt.php', {
+            fetch('fetch_receipt.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ payment_id: payment_id }),
             })
-            
             .then(response => response.text())
             .then(data => {
-                // Open a new window with the receipt content for printing
+                // Open a new window
                 var receiptWindow = window.open('', '_blank');
-                receiptWindow.document.write('<pre>' + data + '</pre>');
+                // Create a container element in the new window
+                var container = receiptWindow.document.createElement('div');
+                // Set the HTML content of the container with the receipt data
+                container.innerHTML = data;
+                // Append the container to the new window's document body
+                receiptWindow.document.body.appendChild(container);
                 // Trigger print dialog for the receipt window
                 receiptWindow.print();
             })
-            
             .catch((error) => {
                 console.error('Error:', error);
             });
         }
+        
+        
+        
     </script>
 </body>
 </html>
