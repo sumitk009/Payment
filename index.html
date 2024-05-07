@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Gateway</title>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <link rel="stylesheet" href="fetch_receipt.php">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -156,7 +156,7 @@
         });
 
         function fetchReceipt(payment_id) {
-            fetch('fetch_receipt.php', {
+            fetch('https://sumitk009.github.io/Payment//fetch_receipt.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -165,16 +165,13 @@
             })
             .then(response => response.text())
             .then(data => {
-                // Open a new window
+                // Open a new window with the receipt content
                 var receiptWindow = window.open('', '_blank');
-                // Create a container element in the new window
-                var container = receiptWindow.document.createElement('div');
-                // Set the HTML content of the container with the receipt data
-                container.innerHTML = data;
-                // Append the container to the new window's document body
-                receiptWindow.document.body.appendChild(container);
-                // Trigger print dialog for the receipt window
-                receiptWindow.print();
+                receiptWindow.document.write(data);
+                // Wait for the content to load before triggering print
+                receiptWindow.addEventListener('load', function() {
+                    receiptWindow.print();
+                });
             })
             .catch((error) => {
                 console.error('Error:', error);
