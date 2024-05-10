@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeNest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX==" crossorigin="anonymous" />
+<link rel="stylesheet" href="style.css">
+   </head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Project Store Logo">
+        </div>
+        <!-- Add other header elements if needed -->
+    </header>
+    <div id="home">
+        <h1>Projects for Sale: CodeNest Marketplace</h1>
+        <div class="projects-container">
+            <div class="project">
+                <h3>Currency Converter</h3>
+                <img src="img1.png" alt="Project 1">
+                <h2>&#8377;9.00</h2>
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Swift and accurate currency conversions</li>
+        <li>Seamless switching between different currencies</li>
+        <li>Real-time updates on currency rates</li>
+        <li>User-friendly interface for easy navigation</li>
+        <li>Enhanced financial planning capabilities</li>
+    </ul>
+         <button onclick="openIndex()">Buy Now</button>
+            </div>
+            <div class="project">
+                <h3>Simple Calculator</h3>
+                <img src="img2.png" alt="Project 2">
+                <h2>&#8377;9.00</h2>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Perform basic mathematical operations</li>
+                    <li>Addition, subtraction, multiplication, and division</li>
+                    <li>Straightforward interface for easy usability</li>
+                    <li>Essential tool for quick calculations</li>
+                </ul>
+                <button onclick="openIndex()">Buy Now</button>
+            </div>
+            <div class="project">
+                <h3>Emogi Maker</h3>
+                <img src="img4.png" alt="Project 4">
+                <h2>&#8377;9.00</h2>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Create personalized emojis from scratch</li>
+                    <li>Customize existing emojis with various features</li>
+                    <li>Intuitive interface for easy emoji designing</li>
+                    <li>Share creations with friends on social media</li>
+                </ul>
+                <button onclick="openIndex()">Buy Now</button>
+            </div>
+            <div class="project">
+                <h3>Online Quiz</h3>
+                <img src="img3.png" alt="Project 3">
+                <h2>&#8377;9.00</h2>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Wide range of mock tests covering various subjects</li>
+                    <li>User-friendly interface for easy navigation</li>
+                    <li>Real-time feedback and performance analysis</li>
+                    <li>Valuable resource for exam preparation</li>
+                </ul>
+                <button onclick="openIndex()">Buy Now</button>
+            </div>
+            <div class="project">
+                <h3>CSS Cake animation</h3>
+                <img src="img5.png" alt="Project 5">
+                <h2>&#8377;9.00</h2>
+                <h4>Key Features:</h4>
+    <ul>
+        <li>Delightful cake animation created with CSS</li>
+        <li>Smooth transitions and realistic details</li>
+        <li>Enhances visual appeal and interactivity of web pages</li>
+        <li>Perfect for special occasions or adding whimsical charm</li>
+    </ul>
+                <button onclick="openIndex()">Buy Now</button>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+        <!-- Contact options -->
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-option">
+                <button onclick="callUs()">Call</button>
+            </div>
+            <div class="contact-option">
+                <button onclick="emailUs()">Email</button>
+            </div>
+        </div>
+        <!-- Contact Us button -->
+        <button class="contact-button" onclick="toggleContactOptions()">Contact Us</button>
+    </div>
+    <footer>
+        <div class="footer-container">
+            
+            <div class="social-links">
+               
+                <a href="https://www.facebook.com/imsumitkumar009" target="_blank">Facebook</a>
+                <a href="data.txt" target="_blank">Twitter</a>
+                <a href="https://instagram.com/___sumit09__" target="_blank">Instagram</a>
+            </div>
+            
+            <div class="contact-info">
+                <h4>About US</h4>
+                <a href="tel:+916205362204">+91 6205362204</a>
+                <a href="mailto:sumitkjmu09@gmail.com">sumitkjmu09@gmail.com</a>
+                <a href="https://maps.app.goo.gl/5qXBewm9qwVhPJsr7">Jamui Bihar 811307</a>
+            </div>
+            <div class="copyright">
+                <a href="https://sumitk009.github.io/Payment/">&copy; 2024 CodeNest - TERMS & CONDITIONS PRIVACY POLICY</a>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+    
+
+    <script>
+        function openIndex() {
+            window.location.href = "index.html";
+        }
+
+        function toggleContactOptions() {
+            var contactOptions = document.getElementById("contactOptions");
+            if (contactOptions.style.display === "block") {
+                contactOptions.style.display = "none";
+            } else {
+                contactOptions.style.display = "block";
+            }
+        }
+
+        function callUs() {
+            window.location.href = "tel:+916205362204";
+        }
+
+        function emailUs() {
+            window.location.href = "mailto:sumitkjmu09@gmail.com";
+        }
+    </script>
+</body>
+</html>
