@@ -3,146 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeNest</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX==" crossorigin="anonymous" />
-<link rel="stylesheet" href="style.css">
-   </head>
+    <title>Payment Gateway</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container {
+            background-color: rgb(0, 105, 151);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0px 3px 1px rgba(0,0,0,0.8);
+            width: 35vw;
+            
+        }
+        h2 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #4b0000;
+            
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #000282;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            font-size: 100%;
+            font-weight: 800;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #amount{
+            background-color: rgb(179, 179, 179);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        #name{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        #email{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        #pin{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        #mobile_number{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        #project_name{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 0, 0);
+        }
+        input[type="submit"]:hover {
+            background-color: #241fb3;
+        }
+        .link{
+            color: rgb(207, 207, 207);
+        }
+        .link:hover{
+            color: rgb(114, 57, 57);
+            
+        }
+        
+        .receipt {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+       
+       
+    </style>
+</head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Project Store Logo">
-        </div>
-        <!-- Add other header elements if needed -->
-    </header>
-    <div id="home">
-        <h1>Projects for Sale: CodeNest Marketplace</h1>
-        <div class="projects-container">
-            <div class="project">
-                <h3>Currency Converter</h3>
-                <img src="img1.png" alt="Project 1">
-                <h2>&#8377;9.00</h2>
-    <h4>Key Features:</h4>
-    <ul>
-        <li>Swift and accurate currency conversions</li>
-        <li>Seamless switching between different currencies</li>
-        <li>Real-time updates on currency rates</li>
-        <li>User-friendly interface for easy navigation</li>
-        <li>Enhanced financial planning capabilities</li>
-    </ul>
-         <button onclick="openIndex()">Buy Now</button>
-            </div>
-            <div class="project">
-                <h3>Simple Calculator</h3>
-                <img src="img2.png" alt="Project 2">
-                <h2>&#8377;9.00</h2>
-                <h4>Key Features:</h4>
-                <ul>
-                    <li>Perform basic mathematical operations</li>
-                    <li>Addition, subtraction, multiplication, and division</li>
-                    <li>Straightforward interface for easy usability</li>
-                    <li>Essential tool for quick calculations</li>
-                </ul>
-                <button onclick="openIndex()">Buy Now</button>
-            </div>
-            <div class="project">
-                <h3>Emogi Maker</h3>
-                <img src="img4.png" alt="Project 4">
-                <h2>&#8377;9.00</h2>
-                <h4>Key Features:</h4>
-                <ul>
-                    <li>Create personalized emojis from scratch</li>
-                    <li>Customize existing emojis with various features</li>
-                    <li>Intuitive interface for easy emoji designing</li>
-                    <li>Share creations with friends on social media</li>
-                </ul>
-                <button onclick="openIndex()">Buy Now</button>
-            </div>
-            <div class="project">
-                <h3>Online Quiz</h3>
-                <img src="img3.png" alt="Project 3">
-                <h2>&#8377;9.00</h2>
-                <h4>Key Features:</h4>
-                <ul>
-                    <li>Wide range of mock tests covering various subjects</li>
-                    <li>User-friendly interface for easy navigation</li>
-                    <li>Real-time feedback and performance analysis</li>
-                    <li>Valuable resource for exam preparation</li>
-                </ul>
-                <button onclick="openIndex()">Buy Now</button>
-            </div>
-            <div class="project">
-                <h3>CSS Cake animation</h3>
-                <img src="img5.png" alt="Project 5">
-                <h2>&#8377;9.00</h2>
-                <h4>Key Features:</h4>
-    <ul>
-        <li>Delightful cake animation created with CSS</li>
-        <li>Smooth transitions and realistic details</li>
-        <li>Enhances visual appeal and interactivity of web pages</li>
-        <li>Perfect for special occasions or adding whimsical charm</li>
-    </ul>
-                <button onclick="openIndex()">Buy Now</button>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-        <!-- Contact options -->
-        <div class="contact-options" id="contactOptions">
-            <div class="contact-option">
-                <button onclick="callUs()">Call</button>
-            </div>
-            <div class="contact-option">
-                <button onclick="emailUs()">Email</button>
-            </div>
-        </div>
-        <!-- Contact Us button -->
-        <button class="contact-button" onclick="toggleContactOptions()">Contact Us</button>
-    </div>
-    <footer>
-        <div class="footer-container">
-            
-            <div class="social-links">
-               
-                <a href="https://www.facebook.com/imsumitkumar009" target="_blank">Facebook</a>
-                <a href="data.txt" target="_blank">Twitter</a>
-                <a href="https://instagram.com/___sumit09__" target="_blank">Instagram</a>
-            </div>
-            
-            <div class="contact-info">
-                <h4>About US</h4>
-                <a href="tel:+916205362204">+91 6205362204</a>
-                <a href="mailto:sumitkjmu09@gmail.com">sumitkjmu09@gmail.com</a>
-                <a href="https://maps.app.goo.gl/5qXBewm9qwVhPJsr7">Jamui Bihar 811307</a>
-            </div>
-            <div class="copyright">
-                <a href="https://sumitk009.github.io/Payment/">&copy; 2024 CodeNest - TERMS & CONDITIONS PRIVACY POLICY</a>
-            </div>
-        </div>
-    </footer>
     
-    
+    <div class="container">
+        
+        
+        <h2>Make Payment</h2>
+        <form action="fetch_receipt.php" method="post" id="paymentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email id:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email id" required>
+            
+            <label for="pin">Pin code:</label>
+            <input type="text" id="pin" name="pin" placeholder="Enter your Pin code" maxlength="6" required>
+            
+            <label for="mobile_number">Mobile Number:</label>
+            <input type="text" id="mobile_number" name="mobile_number" placeholder="Enter your mobile number" maxlength="10" required>
+            
+            <label for="project_name">Project Name:</label>
+            <input type="text" id="project_name" name="project_name" placeholder="Enter the Project name">
+            
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" value="9.00" readonly required>
+            
+            <input type="submit" value="Pay Now">
 
-    
+            <div>
+                <input type="checkbox" name="agree" id="afree" required> <a class="link" href="Terms_andConditions.pdf" target="_blank">Terms and Conditions</a> <br>
+            </div>
+            <!-- Privacy Policy -->
+            <div>
+                <input type="checkbox" name="agree" id="afree" required> <a class="link" href="PrivacyPolicy.pdf" target="_blank">Privacy Policy</a><br>
+            </div>
+            <div>
+               <!-- Refunds/Cancellations -->
+               <input type="checkbox" name="agree" id="afree" required>  <a class="link" href="RefundPolicy.pdf" target="_blank">Refunds/Cancellations Policy</a>
+            </div>
+        </form>
+        <div class="receipt" id="receipt">
+            <!-- Receipt will be displayed here -->
+        </div>
+    </div>
 
     <script>
-        function openIndex() {
-            window.location.href = "index.html";
-        }
+        var form = document.getElementById('paymentForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var options = {
+                "key": "rzp_test_RPstAQBQUlZ0X3", // Replace with your Razorpay Key
+                "amount": document.getElementById('amount').value * 100, // Amount is in currency subunits. 100 refers to 100 paise or 1 Rupee.
+                "currency": "INR", // You can change the currency according to your preference.
+                "name": "Sumit Kumar",
+                "description": "Education",
+                "handler": function (response){
+                    // After successful payment, fetch the receipt from the server
+                    fetchReceipt(response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": document.getElementById('name').value,
+                    "email": document.getElementById('email').value, // you can pass email here
+                    "contact": document.getElementById('mobile_number').value,
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        });
 
-        function toggleContactOptions() {
-            var contactOptions = document.getElementById("contactOptions");
-            if (contactOptions.style.display === "block") {
-                contactOptions.style.display = "none";
-            } else {
-                contactOptions.style.display = "block";
-            }
-        }
-
-        function callUs() {
-            window.location.href = "tel:+916205362204";
-        }
-
-        function emailUs() {
-            window.location.href = "mailto:sumitkjmu09@gmail.com";
+        function fetchReceipt(payment_id) {
+            fetch('https://sumitk009.github.io/Payment//fetch_receipt.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ payment_id: payment_id }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Open a new window with the receipt content
+                var receiptWindow = window.open('', '_blank');
+                receiptWindow.document.write(data);
+                // Wait for the content to load before triggering print
+                receiptWindow.addEventListener('load', function() {
+                    receiptWindow.print();
+                });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </body>
